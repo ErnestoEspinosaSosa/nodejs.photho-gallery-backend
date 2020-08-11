@@ -10,7 +10,7 @@ const path = require('path');
 const passport = require('passport');
 
 //Settings
-app.set('port', process.env.PORT);
+app.set('port', process.env.PORT || 3000);
 
 //Middelware
 app.use(morgan('dev'));
@@ -39,5 +39,4 @@ app.use((err, req, res) => {
 });
 
 //Starting the server
-app.listen(app.get('port'), () => {
-});
+app.listen(app.get('port'));
