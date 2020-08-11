@@ -40,5 +40,4 @@ app.use((err, req, res) => {
 
 //Starting the server
 app.listen(app.get('port'), () => {
-    console.log('Server on port ' + process.env.PORT)
 });
