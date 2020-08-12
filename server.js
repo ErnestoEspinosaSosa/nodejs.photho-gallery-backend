@@ -24,7 +24,7 @@ app.use('/api',require('./server/routes/file.routes'));
 app.use('/api',require('./server/routes/user.routes'));
 
 //Static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'server', 'public')));
 
 // error handler
 app.use((err, req, res) => {
