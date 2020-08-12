@@ -1,11 +1,11 @@
-require('./config/config');
-require('./config/passportConfig');
+require('./server/config/config');
+require('./server/config/passportConfig');
 
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
 const cors = require("cors");
-const {mongoose} = require('./database');
+const {mongoose} = require('./server/database');
 const path = require('path');
 const passport = require('passport');
 
@@ -19,9 +19,9 @@ app.use(cors({ origin: '*' }));
 app.use(passport.initialize());
 
 //Routes
-app.use('/api',require('./routes/images.routes'));
-app.use('/api',require('./routes/file.routes'));
-app.use('/api',require('./routes/user.routes'));
+app.use('/api',require('./server/routes/images.routes'));
+app.use('/api',require('./server/routes/file.routes'));
+app.use('/api',require('./server/routes/user.routes'));
 
 //Static files
 app.use(express.static(path.join(__dirname, 'public')));
